@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Panel - Driver Booking System</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="admin.js"></script>
+</head>
+<body>
+  <header class="wrap">
+    <h1>Admin Panel</h1>
+    <p class="muted">Approve bookings, assign driver & car, export CSV</p>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <label>
+        <span>Admin Key</span>
+        <input id="adminKey" type="password" placeholder="Enter admin key" />
+      </label>
+      <button id="loadBtn" class="secondary">Load Bookings</button>
+      <button id="csvBtn">Download CSV</button>
+    </section>
+
+    <section class="card">
+      <div id="adminList" class="list"></div>
+    </section>
+  </main>
+
+  <footer class="wrap center small muted">© Pejabat Daerah Keningau</footer>
+</body>
+</html>
