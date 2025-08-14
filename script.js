@@ -1,21 +1,22 @@
-document.getElementById('bookingForm').addEventListener('submit', function(e) 
-{
-  e.preventDefault();
+document.getElementById("bookingForm").addEventListener("submit", function(e) {
+    e.preventDefault();
 
-  let name = document.getElementById('staffName').value;
-  let department = document.getElementById('department').value;
-  let dateTime = document.getElementById('dateTime').value;
-  let place = document.getElementById('place').value;
-  let purpose = document.getElementById('purpose').value;
-
-  let bookingItem = `<p><strong>${name}</strong> (${department}) → ${place} at ${dateTime} for ${purpose}</p>`;
-
-  document.getElementById('bookingsList').innerHTML += bookingItem;
-
-  document.getElementById('bookingForm').reset();
+    fetch("YOUR_GOOGLE_APPS_SCRIPT_WEBAPP_URL", {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            staffName: document.getElementById("staffName").value,
+            department: document.getElementById("department").value,
+            date: document.getElementById("date").value,
+            time: document.getElementById("time").value,
+            place: document.getElementById("place").value,
+            purpose: document.getElementById("purpose").value
+        })
+    }).then(() => {
+        alert("Booking submitted!");
+    }).catch(err => {
+        alert("Error: " + err);
+    });
 });
-
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("service-worker.js");
-};
 
