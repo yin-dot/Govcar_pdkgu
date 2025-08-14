@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Driver Booking System</title>
+  <meta name="theme-color" content="#1976d2" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icon-192.png" />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="wrap">
+    <h1>Driver Booking System</h1>
+    <p class="muted">Government Vehicle & Driver Booking (PWA + Google Sheets)</p>
+  </header>
+
+  <main class="wrap grid">
+    <section class="card">
+      <h2>Make a Booking</h2>
+      <form id="bookingForm" class="form">
+        <label>
+          <span>Staff Name</span>
+          <input name="staffName" placeholder="e.g., Aiman bin Ali" required />
+        </label>
+        <label>
+          <span>Department</span>
+          <input name="department" placeholder="e.g., Pentadbiran" required />
+        </label>
+        <label>
+          <span>Date</span>
+          <input type="date" name="date" required />
+        </label>
+        <label>
+          <span>Time</span>
+          <input type="time" name="time" required />
+        </label>
+        <label>
+          <span>Place</span>
+          <input name="place" placeholder="Destination or meeting location" required />
+        </label>
+        <label>
+          <span>Purpose</span>
+          <textarea name="purpose" rows="3" placeholder="Purpose of travel"></textarea>
+        </label>
+        <button type="submit">Submit Booking</button>
+        <p id="formStatus" class="status"></p>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Upcoming Bookings</h2>
+      <div id="bookingsList" class="list"></div>
+      <button id="refreshBtn" class="secondary">Refresh</button>
+    </section>
+
+    <section class="card">
+      <h2>Install on Phone (PWA)</h2>
+      <p>Open this site in Chrome (Android) or Safari (iOS). Then choose <strong>Add to Home Screen</strong>. It will install and open full-screen like an app.</p>
+    </section>
+  </main>
+
+  <footer class="wrap center small muted">
+    © Pejabat Daerah Keningau — Internship Project
+  </footer>
+</body>
+</html>
